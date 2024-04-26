@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Signup - Baymaxwell Mental Health Services</title>
+    <link rel="stylesheet" href="style.css"> 
+    <link rel="stylesheet" href="/css/login_signin.css">
+
+    <!-- Ensure this links to your CSS -->
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Create Your Account</h1>
+        </header>
+        
+        <form action="/submit-signup" method="POST"> <!-- Update action URL as necessary -->
+            <div>
+                <label for="username">Username</label>
+                <input type="text" id="username" name="username" required>
+            </div>
+            <div>
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div>
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" required>
+            </div>
+            <div>
+                <button type="submit" onclick="signup()">Sign Up</button>
+            </div>
+        </form>
+    </div>
+    <script src="\project\auth.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,141 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+header {
+    background: #005A9C;
+    color: #ffffff;
+    padding: 10px 20px;
+    text-align: center;
+}
+
+header nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+header nav ul li {
+    display: inline;
+    margin-right: 10px;
+}
+
+a {
+    color: #ffffff;
+    text-decoration: none;
+}
+
+.hero {
+    background: #007BFF;
+    color: #ffffff;
+    padding: 50px 20px;
+    text-align: center;
+}
+
+.btn {
+    background: #FFA500;
+    padding: 10px 20px;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+section {
+    padding: 20px;
+    text-align: center;
+}
+
+footer {
+    background: #333;
+    color: #fff;
+    text-align: center;
+    padding: 10px 0;
+}
+
+.features, .services {
+    text-align: center;
+    padding: 20px;
+}
+
+.card-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin-top: 20px;
+}
+
+.card {
+    background: #15e4c5;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    width: 20%; /* Adjust based on screen size or use media queries for responsiveness */
+    margin: 10px;
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+}
+
+.card h4 {
+    color: #005A9C;
+    margin-bottom: 10px;
+}
+
+@media (max-width: 800px) {
+    .card {
+        width: 45%; /* Mobile responsive adjustment */
+    }
+}
+
+@media (max-width: 500px) {
+}
+
+.service-container {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    margin: 20px;
+    background-color: #d0d8d48d;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    overflow: hidden;
+    
+  }
+
+ 
+  .service-image {
+    flex: 0 0 60%;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .service-image2 {
+    flex: 0 0 60%;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .service-image img {
+    width: 100%;
+    height: auto;
+    border-top-right-radius: 50%;
+    border-bottom-right-radius: 50%;
+  }
+  .service-image2 img {
+    width: 100%;
+    height: auto;
+    border-top-left-radius: 50%;
+    border-bottom-left-radius: 50%;
+  }
+  
+  .service-name {
+    flex: 0 0 50%;
+    padding: 20px;
+  }
+  
+  .service-name h2 {
+    margin-top: 0;
+    font-size: 1.2rem;
+    color: #333;
+  }

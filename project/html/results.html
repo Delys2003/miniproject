@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recommended Services - Baymaxwell Mental Health Services</title>
+    <link rel="stylesheet" href="/css/results.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Recommended Services Based on Your Assessment</h1>
+        <div id="services"></div>
+        <form id="serviceForm" onsubmit="submitServiceRequest(); return false;">
+            <h2>Select the Services You Are Interested In:</h2>
+            <div id="serviceOptions"></div>
+            <button type="submit">Submit Request</button>
+        </form>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const score = parseInt(localStorage.getItem('mentalStateScore'), 10);
+            const servicesDiv = document.getElementById('services');
+            const serviceOptionsDiv = document.getElementById('serviceOptions');
+
+            let servicesHtml = '';
+            servicesDiv.innerHTML = '<h2>Recommended Services</h2>';
+
+            // Different service options based on the mental state score
+            if (score < 5) {
+                servicesHtml += '<p>Your mental state is stable. Consider maintaining or enhancing your mental wellness through the following services:</p>';
+                servicesHtml += '<label><input type="checkbox" name="service" value="wellnessCheck"> Routine Wellness Check</label><br>';
+                servicesHtml += '<label><input type="checkbox" name="service" value="journaling"> Journaling</label><br>';
+                servicesHtml += '<label><input type="checkbox" name="service" value="meditation"> Guided Meditation Sessions</label><br>';
+                servicesHtml += '<label><input type="checkbox" name="service" value="mentalExercise"> Light Mental Exercises</label><br>';
+            } else if (score < 10) {
+                servicesHtml += '<p>Mild symptoms detected. Enhance your mental health with our supportive services:</p>';
+                servicesHtml += '<label><input type="checkbox" name="service" value="stressWorkshop"> Stress Management Workshop</label><br>';
+                servicesHtml += '<label><input type="checkbox" name="service" value="counseling"> Occasional Counseling Session</label><br>';
+                servicesHtml += '<label><input type="checkbox" name="service" value="meditation"> Regular Meditation Sessions</label><br>';
+                servicesHtml += '<label><input type="checkbox" name="service" value="mentalExercise"> Regular Mental Exercises</label><br>';
+            } else {
+                servicesHtml += '<p>Significant symptoms detected. It is crucial to engage with professional help. Consider the following specialized services:</p>';
+                servicesHtml += '<label><input type="checkbox" name="service" value="intensiveTherapy"> Intensive Therapy Sessions</label><br>';
+                servicesHtml += '<label><input type="checkbox" name="service" value="counseling"> Regular Counseling</label><br>';
+                servicesHtml += '<label><input type="checkbox" name="service" value="meditation"> Advanced Meditation Techniques</label><br>';
+                servicesHtml += '<label><input type="checkbox" name="service" value="mentalExercise"> Advanced Mental Exercises</label><br>';
+            }
+
+            serviceOptionsDiv.innerHTML = servicesHtml;
+        });
+
+        function submitServiceRequest() {
+            const checkedServices = document.querySelectorAll('#serviceForm input[type="checkbox"]:checked');
+            let selectedServices = Array.from(checkedServices).map(cb => cb.value);
+           // alert("You have selected: " + selectedServices.join(", "));
+           window.location.href = `service_details.html?services=${selectedServices.join(',')}`;
+            // Further processing can be done here, such as storing these preferences or sending them to a healthcare provider.
+        }
+    </script>
+</body>
+</html>

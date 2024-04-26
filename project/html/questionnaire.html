@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mental State Analysis - Baymaxwell Mental Health Services</title>
+    <link rel="stylesheet" href="/css/questions.css">
+    <script src="/script/psychometric.js" defer></script>
+</head>
+<body>
+    <div class="container">
+        <h1>Mental State Questionnaire</h1>
+        <form id="mentalStateForm">
+            <p>How often have you felt depressed or hopeless in the last two weeks?</p>
+            <label><input type="radio" name="question1" value="0"> Not at all</label>
+            <label><input type="radio" name="question1" value="1"> Several days</label>
+            <label><input type="radio" name="question1" value="2"> More than half the days</label>
+            <label><input type="radio" name="question1" value="3"> Nearly every day</label>
+
+            <p>How often have you been bothered by having little interest or pleasure in doing things?</p>
+            <label><input type="radio" name="question2" value="0"> Not at all</label>
+            <label><input type="radio" name="question2" value="1"> Several days</label>
+            <label><input type="radio" name="question2" value="2"> More than half the days</label>
+            <label><input type="radio" name="question2" value="3"> Nearly every day</label>
+
+            <p>How often have you felt nervous, anxious, or on edge?</p>
+            <label><input type="radio" name="question3" value="0"> Not at all</label>
+            <label><input type="radio" name="question3" value="1"> Several days</label>
+            <label><input type="radio" name="question3" value="2"> More than half the days</label>
+            <label><input type="radio" name="question3" value="3"> Nearly every day</label>
+
+            <p>How often have you not been able to stop worrying?</p>
+            <label><input type="radio" name="question4" value="0"> Not at all</label>
+            <label><input type="radio" name="question4" value="1"> Several days</label>
+            <label><input type="radio" name="question4" value="2"> More than half the days</label>
+            <label><input type="radio" name="question4" value="3"> Nearly every day</label>
+
+            <p>How often have you had trouble relaxing?</p>
+            <label><input type="radio" name="question5" value="0"> Not at all</label>
+            <label><input type="radio" name="question5" value="1"> Several days</label>
+            <label><input type="radio" name="question5" value="2"> More than half the days</label>
+            <label><input type="radio" name="question5" value="3"> Nearly every day</label>
+
+            
+
+            <button type="button" onclick="evaluateResults()">Submit Answers</button>
+            
+        </form>
+        <div id="result"></div>
+    </div>
+</body>
+</html>

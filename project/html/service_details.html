@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Service Details - Baymaxwell Mental Health Services</title>
+    <link rel="stylesheet" href="/css/journaling.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Details of Selected Services</h1>
+        <div id="serviceDetails"></div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const services = urlParams.get('services').split(',');
+            const serviceDetailsDiv = document.getElementById('serviceDetails');
+            let contentHtml = '';
+
+            services.forEach(service => {
+                contentHtml += getServiceInfo(service);
+            });
+
+            serviceDetailsDiv.innerHTML = contentHtml;
+        });
+
+        function getServiceInfo(service) {
+            switch(service) {
+                case 'counseling':
+                    return '<div><h3>Counseling</h3><p>Choose your counselor preferences:</p>' +
+                           '<p>Gender: <select><option>Male</option><option>Female</option></select></p>' +
+                           '<p>Experience: <select><option>Experienced</option><option>Young</option></select></p>' +
+                           '<p>Time: <select><option>9:00am to 11:00am</option><option>7:00pm to 12:00am</option></select></p>' +
+                           '<p><a href="https://meet.google.com/new" target="_blank">Schedule via Google Meet</a></p></div>';
+                case 'meditation':
+                    return '<div><h3>Meditation</h3><p>Follow these steps:</p><ul>' +
+                           '<li>Find a quiet place.</li><li>Concentrate on your breath.</li>' +
+                           '<li>Practice daily for best results.</li></ul>' +
+                           '<p>Listen to the guided meditation:</p>' +
+                           '<audio controls><source src="\audios\perfect-beauty-191271.mp3" type="audio/mpeg">Your browser does not support the audio element.</audio></div>';
+                case 'journaling':
+                    return '<div class="journal-guide"><h3>Our Guide</h3>' +
+                           '<p class="journal-text">Try these tips to help you get started with journaling:</p>' +
+                           '<ul class="journal-list">' +
+                           '<li>Try to write every day. Set aside a few minutes every day to write. This will help you to write in your journal regularly.</li>' +
+                           '<li>Make it easy. Keep a pen and paper handy at all times. Then when you want to write down your thoughts, you can. You can also keep a journal on your smartphone.</li>' +
+                           '<li>Write or draw whatever feels right. Your journal doesn\'t need to follow any certain structure. It\'s your own private place to discuss and create whatever you want to express your feelings. Let the words and ideas flow freely. Don\'t worry about spelling mistakes or what other people might think.</li>' +
+                           '<li>Use your journal as you see fit. You don\'t have to share your journal with anyone. If you do want to share some of your thoughts with trusted friends and loved ones, you could show them parts of your journal.</li>' +
+                           '<li>Keeping a journal helps you create order when your world feels like it’s in chaos. You get to know yourself by revealing your most private fears, thoughts, and feelings. Look at your writing time as personal relaxation time. It\'s a time when you can de-stress and wind down. Write in a place that\'s relaxing and soothing, maybe with a cup of tea. Look forward to your journaling time. And know that you\'re doing something good for your mind and body.</li>' +
+                           '</ul></div>';
+                case 'mentalExercise':
+                    return '<div><h3>Light Mental Exercises</h3>' +
+                           '<ol>' +
+                           '<li>Word Puzzles: Solve crossword puzzles, word searches, or anagrams. They\'re great for keeping your mind sharp and expanding your vocabulary.</li>' +
+                           '<li>Sudoku: This number-placement puzzle is excellent for exercising your logical thinking and problem-solving skills.</li>' +
+                           '<li>Brain Teasers: Challenge yourself with riddles or brain teasers. They\'re fun and can help improve your cognitive abilities.</li>' +
+                           '<li>Memory Games: Play games that test and improve your memory, like concentration or matching games.</li>' +
+                           '<li>Learn Something New: Pick up a new hobby or skill, whether it\'s playing a musical instrument, learning a new language, or mastering a craft. Learning stimulates your brain and keeps it active.</li>' +
+                           '<li>Mindfulness Meditation: Practice mindfulness meditation to improve focus, reduce stress, and enhance cognitive function.</li>' +
+                           '<li>Visualization Exercises: Close your eyes and visualize a familiar place or an upcoming event in vivid detail. This exercise can enhance your imagination and mental clarity.</li>' +
+                           '<li>Brain-Training Apps: Use apps specifically designed to improve cognitive function through various exercises and games.</li>' +
+                           '<li>Critical Thinking Challenges: Engage in debates, analyze arguments, or solve logic puzzles to sharpen your critical thinking skills.</li>' +
+                           '<li>Puzzle Games: Play strategy-based puzzle games like chess, Tetris, or Rubik\'s Cube. These games stimulate different areas of the brain and can improve cognitive abilities.</li>' +
+                           '</ol>' +
+                           '<p>Remember, consistency is key when it comes to mental exercises. Incorporate these activities into your daily routine to keep your mind sharp and agile.</p>' +
+                           '</div>';
+                
+                case 'stressWorkshop':
+                    return '<div><h3>Stress Management Workshop</h3><p>Details about upcoming workshops.</p></div>';
+                
+                case 'intensiveTherapy':
+                    return '<div><h3>Intensive Therapy Sessions</h3><p>Find nearby therapists:</p>' +
+                           '<p><a href="path/to/find-therapists.html">Locate Therapists</a></p></div>';
+                case 'wellnessCheck':
+                    return '<div><h3>Routine Wellness Check</h3><p>Guidance for maintaining your wellness.</p>' +
+                           '<h4>Daily Mental Checklist:</h4>' +
+                           '<table>' +
+                           '<tr><th>Day</th><th>Meditation</th><th>Yoga</th><th>Eating Veggies</th><th>Tidy Up Space</th><th>Drinking Water</th></tr>' +
+                           '<tr><td>Monday</td><td><input type="checkbox"></td><td><input type="checkbox"></td><td><input type="checkbox"></td><td><input type="checkbox"></td><td><input type="checkbox"></td></tr>' +
+                           '<tr><td>Tuesday</td><td><input type="checkbox"></td><td><input type="checkbox"></td><td><input type="checkbox"></td><td><input type="checkbox"></td><td><input type="checkbox"></td></tr>' +
+                           '<tr><td>Wednesday</td><td><input type="checkbox"></td><td><input type="checkbox"></td><td><input type="checkbox"></td><td><input type="checkbox"></td><td><input type="checkbox"></td></tr>' +
+                           '<tr><td>Thursday</td><td><input type="checkbox"></td><td><input type="checkbox"></td><td><input type="checkbox"></td><td><input type="checkbox"></td><td><input type="checkbox"></td></tr>' +
+                           '<tr><td>Friday</td><td><input type="checkbox"></td><td><input type="checkbox"></td><td><input type="checkbox"></td><td><input type="checkbox"></td><td><input type="checkbox"></td></tr>' +
+                           '<tr><td>Saturday</td><td><input type="checkbox"></td><td><input type="checkbox"></td><td><input type="checkbox"></td><td><input type="checkbox"></td><td><input type="checkbox"></td></tr>' +
+                           '<tr><td>Sunday</td><td><input type="checkbox"></td><td><input type="checkbox"></td><td><input type="checkbox"></td><td><input type="checkbox"></td><td><input type="checkbox"></td></tr>' +
+                           '</table></div>';
+                default:
+                    return '<div><h3>Unknown Service</h3></div>';
+            }
+        }
+    </script>
+</body>
+</html>
